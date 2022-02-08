@@ -37,7 +37,7 @@ $router->map('POST',"/shortLink/",function()
             $init = new db();
             $insert = $init->create(1,$_POST["url"],$links);
             require 'home.php';
-            echo "<a href='$links'>".$links."</a>";
+            echo "<a href='$links' target='_blank'>".$links."</a>";
         } 
         else 
         {   
@@ -50,8 +50,12 @@ $router->map('POST',"/shortLink/",function()
 // var_dump($_SESSION["host"]);
  $router->map('GET',"/shortLink/[*:name]",function($name)
 {      
-    echo "here \n\r"; 
-    echo $name; 
+    $init = new db();
+    $urllink = $init->geturl();
+    $urllink = $urllink[0];
+    $url = $urllink->url;
+    
+    header("location:$url");
 });
 
 
