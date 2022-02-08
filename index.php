@@ -1,5 +1,5 @@
 <?php
-    session_start();
+   
     require "vendor/autoload.php";
     require "db.php";
     
@@ -54,7 +54,7 @@ $router->map('POST',"/shortLink/",function()
     $urllink = $init->geturl();
     $urllink = $urllink[0];
     $url = $urllink->url;
-    
+
     header("location:$url");
 });
 

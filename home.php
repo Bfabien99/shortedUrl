@@ -1,15 +1,3 @@
-<?php
-
-    $init = new db();
-    $urllink = $init->geturl();
-    $shortedlink = $init->getshorted();
-    $urllink = $urllink[0];
-
-    $url = $urllink->url;
-    $host = $shortedlink->shorted;
-    $_SESSION["host"] = $host;
-    
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
