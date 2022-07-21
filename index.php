@@ -42,7 +42,6 @@
         }
     });
 
-    // var_dump($_SESSION["host"]);
     $router->map('GET',"/shortLink/[*:name]",function($name)
     {      
         $init = new db();
